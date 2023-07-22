@@ -12,7 +12,14 @@
     <div class="col-xs-12">
   <app-server-component
       *ngFor="let ele of serverElements"
-      [serverComp]="ele"></app-server-component>
+      [serverComp]="ele">
+
+      <p>
+        <strong *ngIf="ele.type === 'server'" style="color: red">{{ ele.content }}</strong>
+        <em *ngIf="ele.type === 'blueprint'">{{ ele.content }}</em>
+      </p>
+
+    </app-server-component>
     </div>
   </div>
 </div>
